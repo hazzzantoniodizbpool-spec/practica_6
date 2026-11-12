@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+ai-backend/node_modules/
+
+# Archivos de entorno y credenciales sensibles
+.env
+ai-backend/.env
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos no relacionados con la Practica 6
+claude_desktop_config.json
+diagrama_er_rfam.*
+diccionario_datos_rfam.*
+Entregables_*
+entregable_prompts_y_config.txt
