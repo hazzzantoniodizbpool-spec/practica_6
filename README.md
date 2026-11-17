@@ -74,3 +74,4 @@ practica_6/
 - **Validación de Entradas**: Verificación de campos obligatorios (`message`).
 - **Inferencia LLM**: Comunicación exitosa con modelo `openai/gpt-4o-mini`.
 - **Memoria Contextual**: Mantenimiento del historial conversacional en peticiones consecutivas.
+

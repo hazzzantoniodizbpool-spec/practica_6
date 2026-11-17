@@ -65,15 +65,10 @@ function appendMessage(text, sender, isError = false) {
   const row = document.createElement('div');
   row.className = `row ${sender}`;
 
-  const avatar = document.createElement('div');
-  avatar.className = 'mini-avatar';
-  avatar.textContent = sender === 'user' ? '🙂' : '🤖';
-
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${sender}${isError ? ' error' : ''}`;
   messageDiv.textContent = text;
 
-  row.appendChild(avatar);
   row.appendChild(messageDiv);
   chatBox.appendChild(row);
   chatBox.scrollTop = chatBox.scrollHeight;
@@ -84,8 +79,7 @@ function showTyping() {
   const chatBox = document.getElementById('chatBox');
   const row = document.createElement('div');
   row.className = 'row assistant';
-  row.innerHTML = '<div class="mini-avatar">🤖</div>' +
-    '<div class="message assistant typing"><span></span><span></span><span></span></div>';
+  row.innerHTML = '<div class="message assistant typing"><span></span><span></span><span></span></div>';
   chatBox.appendChild(row);
   chatBox.scrollTop = chatBox.scrollHeight;
   return row;
@@ -94,7 +88,7 @@ function showTyping() {
 // Usar una de las sugerencias de la pantalla de bienvenida
 function useSuggestion(button) {
   const inputField = document.getElementById('userInput');
-  inputField.value = button.textContent.replace(/^\S+\s/, ''); // quitar el emoji inicial
+  inputField.value = button.textContent.trim();
   sendMessage();
 }
 
